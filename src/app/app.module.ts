@@ -25,6 +25,9 @@ import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
 import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { Header2Component } from './header2/header2.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     FooterComponent,
     HomepageComponent,
-    MyprofileComponent
+    MyprofileComponent,
+    Header2Component,
+    ContactUsComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,

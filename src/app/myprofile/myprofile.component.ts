@@ -52,7 +52,7 @@ export class MyprofileComponent implements OnInit {
     address:['']
   })
 
-  // ask gopi to set a cookie in sessionstorage for username
+  // set a cookie in sessionstorage for username
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   }
