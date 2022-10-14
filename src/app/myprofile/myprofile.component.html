@@ -1,0 +1,108 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <section style="background-color: #eee;">
+        <div class="container py-5">
+
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="card mb-4">
+                        <div class="card-body text-center">
+                            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
+                                alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
+                            <h5 class="my-3">{{myForm.value.customerName}}</h5>
+                            <p class="text-muted mb-4">{{myForm.value.address}}</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-8">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    <p class="mb-0">Full Name</p>
+                                </div>
+                                <div class="col-sm-10">
+                                    <input formControlName="customerName"
+                                        [class.is-invalid]="customerName?.invalid && customerName?.touched"
+                                        [(ngModel)]="currentCustomer.customerName" type="text" class="form-control">
+                                    <small [class.d-none]="customerName?.valid || customerName?.untouched"
+                                        class="text-danger">Customer Name is a required field</small>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    <p class="mb-0">Email</p>
+                                </div>
+                                <div class="col-sm-10">
+                                    <input formControlName="email" [class.is-invalid]="email?.invalid && email?.touched"
+                                        [(ngModel)]="currentCustomer.email" type="text" class="form-control">
+                                    <div *ngIf="email.invalid && email.touched">
+                                        <small *ngIf="email.errors?.required" class="text-danger">Email is a
+                                            required field</small>
+                                        <small *ngIf="email.errors?.pattern" class="text-danger">Please enter a
+                                            valid email</small>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    <p class="mb-0">Old Password</p>
+                                </div>
+                                <div class="col-sm-4">
+                                    <input formControlName="oldpassword" readonly type="password"
+                                        [(ngModel)]="currentCustomer.password" class="form-control disabled">
+                                </div>
+
+                                <div class="col-sm-2">
+                                    <p class="mb-0">New Password</p>
+                                </div>
+                                <div class="col-sm-4">
+                                    <input formControlName="password" type="password" class="form-control">
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    <p class="mb-0">Mobile</p>
+                                </div>
+                                <div class="col-sm-10">
+                                    <input formControlName="mobile" type="number" [(ngModel)]="currentCustomer.mobile"
+                                        class="form-control">
+                                    <div *ngIf="mobile.invalid && mobile.touched">
+                                        <small *ngIf="mobile.errors?.required" class="text-danger">Mobile number is a
+                                            required field</small>
+                                        <small *ngIf="mobile.errors?.pattern" class="text-danger">Please enter a
+                                            valid number</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    <p class="mb-0">Address</p>
+                                </div>
+                                <div class="col-sm-10">
+                                    <input formControlName="address" type="text" [(ngModel)]="currentCustomer.address"
+                                        class="form-control">
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-sm-12 text-center">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- {{myForm.value |json}} -->
+</form>
